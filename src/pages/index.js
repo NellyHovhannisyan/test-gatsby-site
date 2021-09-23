@@ -1,5 +1,5 @@
-import * as React from "react"
-
+import * as React from "react";
+import { Link } from "gatsby";
 // styles
 const pageStyles = {
   color: "#232129",
@@ -172,6 +172,9 @@ const IndexPage = () => {
             </span>
           </li>
         ))}
+	<li>
+		<Link to={"/products"}>Products</Link>
+	</li>
       </ul>
       <img
         alt="Gatsby G Logo"
