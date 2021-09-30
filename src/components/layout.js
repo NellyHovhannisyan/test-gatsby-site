@@ -1,9 +1,17 @@
-import React from "react"
+import * as React from 'react'
+import  Navbar  from './Navbar'
 
-export default function Layout({ children }) {
+const Layout = ({children}) => {
   return (
-    <div style={{ margin: `0 auto`, maxWidth: 650, padding: `0 1rem` }}>
+    <div>
+    <Navbar/>
+    <main>
       {children}
+    </main>
+    <footer>
+      <p>CopyRight 2021  N. H. </p>
+    </footer>
     </div>
-  )
-}
+  )}
+
+  export default Layout;
