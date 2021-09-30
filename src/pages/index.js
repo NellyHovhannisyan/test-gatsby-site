@@ -1,13 +1,32 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
-import Layout from '../components/Layout'
+import * as React from 'react';
+import Layout from '../components/Layout.js';
+import { graphql } from 'gatsby';
+import Img from "gatsby-image";
 
-const IndexPage = () => {
+const IndexPage = ({data}) => {
+  console.log(data.file.childImageSharp.fluid);
   return (
     <Layout >
-    <p>HELLO EVERYBODY</p>
+    <h1>HELLO EVERYBODY </h1>
+    <Img
+        fluid={data.file.childImageSharp.fluid}
+        alt="A corgi smiling happily"
+      />
    </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
+
+export const query = graphql`
+  query MyQuery {
+    file(relativePath: { eq: "preezma-cover-last.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
