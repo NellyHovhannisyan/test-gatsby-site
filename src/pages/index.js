@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import Img from "gatsby-image";
 
 const IndexPage = ({data}) => {
-  console.log(data.file.childImageSharp.fluid);
   return (
     <Layout >
     <h1>HELLO EVERYBODY </h1>
